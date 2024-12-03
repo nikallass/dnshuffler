@@ -18,3 +18,14 @@ python3 dnshuffler/dnshuffler.py -d "tcsbank.ru" -m swap neighbor
 
 ```
 
+Also you can use 6-th method "homoglyph" and defend against phising attacks, by adding the list hosts file on endpoints sinkholing them and blocking such domain resolutions. Method disabled by default.
+
+```
+python3 dnshuffler.py -d "tcsbank.ru" -m neighbor similar omit duplicate swap neighbor_duplicate homoglyph
+```
+
+Requres [idna python](https://github.com/kjd/idna/) module for punycode non-us characters in domain:
+```
+git clone ---recursive https://github.com/nikallass/dnshuffler
+```
+

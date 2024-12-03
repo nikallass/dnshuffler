@@ -1,5 +1,5 @@
 # dnshuffler
-Create list of typo or phish domains for blocking on corporate firewalls
+Create list of typo or phishing domains for blocking on corporate firewalls.
 
 There's a lot of examples when actors register squatting domains, listening to 25,53,80,110,443,465,995 and other ports, waiting when somebody in company mistyped domain, and connected to adversarie's server. 
 

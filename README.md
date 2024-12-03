@@ -7,7 +7,7 @@ After [Certainly tool](https://github.com/happycakefriends/certainly) was introd
 
 > Certainly - is a offensive security toolkit to capture large amounts of traffic in various network protocols in bitflip and typosquat scenarios. The tool was built to support research on these topics...
 
-You can use 5 methods to generate a list of your domain typos and block them on corporate FW. When some IT guy or developer mistyped your corporate domain, portentially evil domain won't be resolved and dangerous request won't be sent. 
+You can use 6 methods to generate a list of your domain typos and block them on corporate FW. When some IT guy or developer mistyped your corporate domain, portentially evil domain won't be resolved and dangerous request won't be sent. 
 
 ```
 python3 dnshuffler.py -d "example.com,example.net" -o shuffled_domains.txt
@@ -18,7 +18,7 @@ python3 dnshuffler/dnshuffler.py -d "tcsbank.ru" -m swap neighbor
 
 ```
 
-Also you can use 6-th method "homoglyph" and defend against phising attacks, by adding the list hosts file on endpoints sinkholing them and blocking such domain resolutions. Method disabled by default.
+Also you can use 7-th method "homoglyph" and defend against phising attacks, by adding the list hosts file on endpoints sinkholing them and blocking such domain resolutions. Method disabled by default.
 
 ```
 python3 dnshuffler.py -d "tcsbank.ru" -m neighbor similar omit duplicate swap neighbor_duplicate homoglyph

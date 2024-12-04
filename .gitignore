@@ -2,6 +2,8 @@
 !requirements.txt
 *.txt
 *.lst
+*.csv
+*.json
 
 # Mac thumbernails
 .DS_Store

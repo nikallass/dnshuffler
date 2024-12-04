@@ -64,8 +64,8 @@ def generate_typos(domain, methods):
             swapped[i], swapped[i + 1] = swapped[i + 1], swapped[i]
             typo_domains.add(''.join(swapped))
 
-    # Filter domains so that the hyphen is not at the beginning or end and the domain is not empty
-    typo_domains = {typo for typo in typo_domains if len(typo) > 0 and not (typo.startswith('-') or typo.endswith('-'))}
+    # Filter domains so that the hyphen is not at the beginning or end, the domain is not empty, there is no double hypens
+    typo_domains = {typo for typo in typo_domains if len(typo) > 0 and not (typo.startswith('-') or typo.endswith('-')) and '--' not in typo}
 
     return typo_domains
 

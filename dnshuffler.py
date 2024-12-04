@@ -2,7 +2,7 @@ import argparse
 import json
 import csv
 import sys
-from idna import idna
+import idna
 
 def generate_typos(domain, methods):
     keyboard_neighbors = {
@@ -117,10 +117,17 @@ def parse_args():
     parser.add_argument('-m', '--methods', type=str, help='Methods to use for generating typos. Available methods: neighbor, similar, omit, duplicate, swap, neighbor_duplicate, homoglyph.')
     parser.add_argument('-o', '--output', type=str, help='Output file name. If not provided, output is printed to stdout.')
     parser.add_argument('-f', '--format', choices=['json', 'csv', 'text'], default='text', help='Output file format.')
-    return parser.parse_args()
+    return parser
 
 def main():
-    args = parse_args()
+    parser = parse_args()
+    args = parser.parse_args()
+
+    # Check for input from stdin
+    if not args.domains and sys.stdin.isatty():
+        print("No domains provided. Displaying help:")
+        parser.print_help()
+        sys.exit(1)
 
     methods = args.methods.split(',') if args.methods else ['neighbor', 'similar', 'omit', 'duplicate', 'swap', 'neighbor_duplicate']
 

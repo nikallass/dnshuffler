@@ -1,3 +1,0 @@
-[submodule "idna"]
-	path = idna
-	url = https://github.com/kjd/idna

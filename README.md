@@ -28,11 +28,21 @@ python3 dnshuffler.py -d "tcsbank.ru" -m neighbor,similar,omit,duplicate,swap,ne
 
 Requres [idna python](https://github.com/kjd/idna/) module for punycode non-us characters in domain:
 ```
+1) Clone
+https://github.com/nikallass/dnshuffler.git
+
+2) Activate python virtual environment
 cd dnshuffler
 python3 -m venv .
 source venv/bin/activate
+
+3) Install requrements
 pip3 install -r requirements.txt
+
+4) Run tool
 python3 dnshuffler.py
+
+5) Deactivate python virtual environment
 deactivate
 ```
 

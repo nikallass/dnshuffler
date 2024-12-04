@@ -16,22 +16,14 @@ python3 dnshuffler.py -d "example.com,example.net" -o shuffled_domains.txt
 
 python3 dnshuffler.py -d 2-lvl-domain.lst -f csv -o shuffled_domains.csv
 
-<<<<<<< HEAD
 python3 dnshuffler/dnshuffler.py -d "tcsbank.ru" -m swap,neighbor
-=======
-python3 dnshuffler/dnshuffler.py -d "example.com" -m swap neighbor
->>>>>>> 398135968c12e2b95268c6a27c202f1b201f02ff
 
 ```
 
 Also you can use 7-th method "homoglyph" and defend against phising attacks, by adding the list hosts file on endpoints sinkholing them and blocking such domain resolutions. Method disabled by default.
 
 ```
-<<<<<<< HEAD
 python3 dnshuffler.py -d "tcsbank.ru" -m neighbor,similar,omit,duplicate,swap,neighbor_duplicate,homoglyph
-=======
-python3 dnshuffler.py -d "example.com" -m neighbor similar omit duplicate swap neighbor_duplicate homoglyph
->>>>>>> 398135968c12e2b95268c6a27c202f1b201f02ff
 ```
 
 Requres [idna python](https://github.com/kjd/idna/) module for punycode non-us characters in domain:

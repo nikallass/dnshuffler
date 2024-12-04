@@ -114,13 +114,15 @@ def save_output(typos, output_file, output_format):
 def parse_args():
     parser = argparse.ArgumentParser(description='Generate typos for given domain names.')
     parser.add_argument('-d', '--domains', type=str, help='Comma-separated list of domains or a file containing domains. If not given, reads from stdin.')
-    parser.add_argument('-m', '--methods', nargs='+', choices=['neighbor', 'similar', 'omit', 'duplicate', 'swap', 'neighbor_duplicate', 'homoglyph'], default=['neighbor', 'similar', 'omit', 'duplicate', 'swap', 'neighbor_duplicate'], help='Methods to use for generating typos.')
+    parser.add_argument('-m', '--methods', type=str, help='Methods to use for generating typos. Available methods: neighbor, similar, omit, duplicate, swap, neighbor_duplicate, homoglyph.')
     parser.add_argument('-o', '--output', type=str, help='Output file name. If not provided, output is printed to stdout.')
     parser.add_argument('-f', '--format', choices=['json', 'csv', 'text'], default='text', help='Output file format.')
     return parser.parse_args()
 
 def main():
     args = parse_args()
+
+    methods = args.methods.split(',') if args.methods else ['neighbor', 'similar', 'omit', 'duplicate', 'swap', 'neighbor_duplicate']
 
     # Get domain list
     if args.domains:
@@ -135,7 +137,7 @@ def main():
         # Read from stdin, if no input argument
         domains = [line.strip() for line in sys.stdin if line.strip()]
 
-    typos = generate_all_typos(domains, args.methods)
+    typos = generate_all_typos(domains, methods)
     save_output(typos, args.output, args.format)
 
 if __name__ == '__main__':

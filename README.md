@@ -28,6 +28,6 @@ python3 dnshuffler.py -d "tcsbank.ru" -m neighbor,similar,omit,duplicate,swap,ne
 
 Requres [idna python](https://github.com/kjd/idna/) module for punycode non-us characters in domain:
 ```
-git clone ---recursive https://github.com/nikallass/dnshuffler
+git clone --recursive https://github.com/nikallass/dnshuffler
 ```
 

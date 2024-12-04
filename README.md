@@ -36,6 +36,11 @@ python3 dnshuffler.py -d "example.com" -m neighbor similar omit duplicate swap n
 
 Requres [idna python](https://github.com/kjd/idna/) module for punycode non-us characters in domain:
 ```
-git clone ---recursive https://github.com/nikallass/dnshuffler
+cd dnshuffler
+python3 -m venv .
+source venv/bin/activate
+pip3 install -r requirements.txt
+python3 dnshuffler.py
+deactivate
 ```
 

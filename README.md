@@ -14,9 +14,9 @@ So here is a small tool to generate typosquattings. You can use 6 methods to gen
 ```
 python3 dnshuffler.py -d "example.com,example.net" -o shuffled_domains.txt
 
-python3 dnshuffler.py -d 2-lvl-domain.lst -f csv -o shuffled_domains.csv
+python3 dnshuffler.py -d 2-lvl_domains.lst -f csv -o shuffled_domains.csv
 
-python3 dnshuffler/dnshuffler.py -d "tcsbank.ru" -m swap,neighbor
+python3 dnshuffler.py -d "tcsbank.ru" -m swap,neighbor
 
 ```
 
@@ -28,12 +28,14 @@ python3 dnshuffler.py -d "tcsbank.ru" -m neighbor,similar,omit,duplicate,swap,ne
 
 Requres [idna python](https://github.com/kjd/idna/) module for punycode non-us characters in domain:
 ```
+0) Install git, pip3, python3.11-venv
+
 1) Clone
 # git clone https://github.com/nikallass/dnshuffler.git
 
 2) Activate python virtual environment
 # cd dnshuffler
-# python3 -m venv .
+# python3 -m venv venv
 # source venv/bin/activate
 
 3) Install requrements
